@@ -45,7 +45,7 @@ app.use("/api/v1/blog", blogsRoutes);
 // statics files
 app.use(express.static(path.join(__dirname, './client/build')));
 
-app.get('*', function (req, res) {
+app.use('*', function (_req, res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'));
 })
 
